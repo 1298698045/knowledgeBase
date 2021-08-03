@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul li {
+    list-style: none;
+}
+.headLayout{
+    width: 100%;
+    height: 54px;
+    min-height: 54px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 5px 5px #ccc;
+}
+.headLayout .nav{
+    width: 90%;
+    height: 54px;
+    background: #fff;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.headLayout .nav .nav_left .logo{
+    width: 108px;
+    height: 23px;
+    background: red;
+}
+.headLayout .nav .nav_left{
+    display: flex;
+}
+.headLayout .nav .nav_left .navBar{
+    display: flex
+}
