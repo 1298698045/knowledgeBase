@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>产品首页</title>
+    <link rel="stylesheet" href="/css/head.css">
+    <link rel="stylesheet" href="/static/icon/iconfont.css">
+    <link rel="stylesheet" href="/css/productHome.css">
+</head>
+<body>
+    <div id="app" class="wrapper">
+        <div class="headLayout">
+            <div class="nav">
+                <div class="nav_left">
+                    <div class="logo">
+
+                    </div>
+                    <ul class="navBar">
+                        <li class="nav_bar_item" v-for="(item,index) in headTabs" @click="changeTabs(item,index)">
+                            <a href="#">
+                                <span :class="{active:tabNumber==index}">
+                                    {{item.name}}
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav_right">
+                    <div class="search">
+                        <input class="inpSearch" type="text" placeholder="搜索" v-code>
+                        <i class="iconfont icon-sousuo"></i>
+                    </div>
+                    <a href="#" class="login_btn">登录</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <section class="heroCard">
+                <div class="uhf">
+                    <h1 class="title">.NET 文档</h1>
+                    <p class="margin-none has-padding-top-medium">了解如何使用 .NET 在任何使用 C#、F# 和 Visual Basic 的平台上创建应用程序。 浏览 API 引用、代码示例、教程以及其他内容。</p>
+                </div>
+            </section>
+            <section class="highlighted-content">
+                <div class="uhf-container">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="left_icon"></div>
+                            <div class="right_cont">
+                                <p class="text">
+                                    下载
+                                </p>
+                                <h3 class="font-size-h3">
+                                    <a href="#">
+                                        下载 .NET
+                                    </a>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="column" v-for="item in 7">
+                            <div class="left_icon"></div>
+                            <div class="right_cont">
+                                <p class="text">
+                                    下载
+                                </p>
+                                <h3 class="font-size-h3">
+                                    <a href="#">
+                                        使用 C# 生成 .NET 应用
+                                    </a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="conceptual-content">
+                <div class="uhf-container">
+                    <h2 class="title">.NET：可用。 跨平台。 开放源代码。</h2>
+                    <p class="desc">
+                        用于构建所有应用（Web 应用、移动应用、桌面应用、游戏、IoT 等）的开发人员平台。 在 Windows、Linux 和 macOS 上受支持。
+                    </p>
+                    <div class="columns">
+                        <div class="column" v-for="item in 4">
+                            <h3 class="font-size-h6">开放源代码 .NET</h3>
+                            <ul class="uls">
+                                <li class="lis">
+                                    <span class="icon"></span>
+                                    <a href="#">
+                                        .NET 概述
+                                    </a>
+                                </li>
+                                <li class="lis" v-for="son in 6">
+                                    <span class="icon"></span>
+                                    <a href="#">
+                                        .NET 5 的新变化
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="tools">
+                <div class="uhf-container">
+                    <h2 class="title">.NET：可用。 跨平台。 开放源代码。</h2>
+                    <p class="desc">
+                        用于构建所有应用（Web 应用、移动应用、桌面应用、游戏、IoT 等）的开发人员平台。 在 Windows、Linux 和 macOS 上受支持。
+                    </p>
+                    <div class="columns">
+                        <div class="column">
+                            <div class="l_icon">
+                                <img src="/images/logo_Csharp.svg" alt="">
+                            </div>
+                            <a href="#" class="text">面向对象的新式类型安全语言</a>
+                        </div>
+                        <div class="column">
+                            <div class="l_icon">
+                                <img src="/images/logo_Csharp.svg" alt="">
+                            </div>
+                            <a href="#" class="text">面向对象的新式类型安全语言</a>
+                        </div>
+                        <div class="column">
+                            <div class="l_icon">
+                                <img src="/images/logo_Csharp.svg" alt="">
+                            </div>
+                            <a href="#" class="text">面向对象的新式类型安全语言</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="conceptual-content">
+                <div class="uhf-container">
+                    <h2 class="title">创建应用程序</h2>
+                    <p class="desc">
+                        你可以选择 Web 应用、移动应用、桌面应用、游戏、IoT 等。
+                    </p>
+                    <div class="columns">
+                        <div class="column" v-for="item in 15">
+                            <h3 class="font-size-h6">移动型</h3>
+                            <ul class="uls">
+                                <li class="lis">
+                                    <span class="icon"></span>
+                                    <a href="#">
+                                        ASP.NET Core 教程
+                                    </a>
+                                </li>
+                                <li class="lis" v-for="son in 6">
+                                    <span class="icon"></span>
+                                    <a href="#">
+                                        Xamarin.Forms
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="fake_item"></div>
+                        <div class="fake_item"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="footerLayout">
+            <footer>
+                <div class="is-full">
+                    <a href="#">
+                        <i class="iconfont icon-diqiu"></i>
+                        <span class="local-selector-link-text">中文 (简体)</span>
+                    </a>
+                    <div class="dropdown">
+                        <button>
+                            <i class="iconfont icon-diqiu"></i>
+                            <span>主题</span>
+                        </button>
+                    </div>
+                </div>
+                <ul class="links">
+                    <li>
+                        <a href="#">旧版文档</a>
+                    </li>
+                    <li>
+                        <a href="#">博客</a>
+                    </li>
+                    <li>
+                        <a href="#">参与</a>
+                    </li>
+                    <li>
+                        <a href="#">隐私和Cookie</a>
+                    </li>
+                    <li>
+                        <a href="#">使用条款</a>
+                    </li>
+                    <li>
+                        <a href="#">商标</a>
+                    </li>
+                    <li>
+                        <a href="#">© Microsoft 2021</a>
+                    </li>
+                </ul>
+            </footer>
+        </div>
+    </div>
+</body>
+<script src="/utils/vue.js"></script>
+<script src="/utils/jquery.js"></script>
+<script src="/js/productHome.js"></script>
+</html>

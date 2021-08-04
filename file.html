@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>文档</title>
+    <link rel="stylesheet" href="/css/head.css">
+    <link rel="stylesheet" href="/static/icon/iconfont.css">
+    <link rel="stylesheet" href="/css/file.css">
+    <link rel="stylesheet" href="/css/elementUI.css">
+</head>
+<body>
+    <div id="app" class="wrapper">
+        <div class="headLayout">
+            <div class="nav">
+                <div class="nav_left">
+                    <div class="logo">
+
+                    </div>
+                    <ul class="navBar">
+                        <li class="nav_bar_item" v-for="(item,index) in headTabs" @click="changeTabs(item,index)">
+                            <a href="#">
+                                <span :class="{active:tabNumber==index}">
+                                    {{item.name}}
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav_right">
+                    <div class="search">
+                        <input class="inpSearch" type="text" placeholder="搜索" v-code>
+                        <i class="iconfont icon-sousuo"></i>
+                    </div>
+                    <a href="#" class="login_btn">登录</a>
+                </div>
+            </div>
+            <div class="nav_bar">
+                <div class="nav_bar_margin">
+                    <a href="#" class="nav-bar-button">
+                        <span>
+                            .NET
+                        </span>
+                    </a>
+                    <nav class="nav_bar_nav">
+                        <ul class="lis">
+                            <li class="nav_bar_item dropdown">
+                                <span class="text">语言</span>
+                                <span class="icons">
+                                    <i class="iconfont icon-shangjiantou"></i>
+                                </span>
+                                <div class="dropdown-menu">
+                                    <div class="nav-bar">
+                                        <a href="#">C#</a>
+                                    </div>
+                                    <div class="nav-bar">
+                                        <a href="#">C#</a>
+                                    </div>
+                                    <div class="nav-bar">
+                                        <a href="#">Visual Basic</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav_bar_item dropdown">
+                                <span class="text">工作负载</span>
+                                <span class="icons">
+                                    <i class="iconfont icon-shangjiantou"></i>
+                                </span>
+                            </li>
+                            <li class="nav_bar_item dropdown">
+                                <span class="text">API</span>
+                                <span class="icons">
+                                    <i class="iconfont icon-shangjiantou"></i>
+                                </span>
+                            </li>
+                            <li class="nav_bar_item dropdown">
+                                <span class="text">资源</span>
+                                <span class="icons">
+                                    <i class="iconfont icon-shangjiantou"></i>
+                                </span>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p class="nav-bar-spacer"></p>
+                    <div class="nav-bar-list">
+                        <a class="download" href="#">下载 .NET</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <div class="left">
+                <ul class="page-breadcrumbs">
+                    <li>
+                        <a href="#">Docs</a>
+                    </li>
+                    <li>
+                        <a href="#">.NET</a>
+                    </li>
+                    <li>
+                        <a href="#">.NET 基础知识</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right"></div>
+        </div>
+        <div class="container">
+            <div class="column_wrap">
+                <div class="left_container">
+                    <nav class="postion_fixed">
+                        <form action="javascript:">
+                            <div class="autocomplete">
+                                <div class="control">
+                                    <input class="inp" type="text" placeholder="按标题筛选" v-focus>
+                                    <i class="iconfont icon-shaixuan"></i>
+                                </div>
+                            </div>
+                        </form>
+                        <ul class="tree">
+                            <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick">
+                                <span class="custom-tree-node" :class="data.class" slot-scope="{ node, data }">
+                                    <span class="default">
+                                        <i class="iconfont" :class="data.icon"></i>
+                                        <a class="label" href="#">{{ node.label }}</a>
+                                    </span>              
+                                </span>
+                            </el-tree>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="center_container">
+                    <div class="main_bd">
+                        <h1 class="title">
+                            .NET 入门
+                        </h1>
+                        <section class="recommendations-section">
+                            <h1 class="title">
+                                建议的内容
+                            </h1>
+                            <ul class="recommendations-list">
+                                <li class="cart_item">
+                                    <a class="cart_title" href="#">
+                                        <h3>
+                                            .NET 入门教程
+                                        </h3>
+                                    </a>
+                                    <p class="cart_cont_desc">
+                                        选择一个教程以学习 .NET 应用开发或选择一种 .NET 编程语言。
+                                    </p>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="right_cont">
+
+                    </div>
+                </div>
+                <!-- <div class="right_container"></div> -->
+            </div>
+        </div>
+        <div class="footerLayout">
+            <footer>
+                <div class="is-full">
+                    <a href="#">
+                        <i class="iconfont icon-diqiu"></i>
+                        <span class="local-selector-link-text">中文 (简体)</span>
+                    </a>
+                    <div class="dropdown">
+                        <button>
+                            <i class="iconfont icon-liangdu-"></i>
+                            <span>主题</span>
+                        </button>
+                    </div>
+                </div>
+                <ul class="links">
+                    <li>
+                        <a href="#">旧版文档</a>
+                    </li>
+                    <li>
+                        <a href="#">博客</a>
+                    </li>
+                    <li>
+                        <a href="#">参与</a>
+                    </li>
+                    <li>
+                        <a href="#">隐私和Cookie</a>
+                    </li>
+                    <li>
+                        <a href="#">使用条款</a>
+                    </li>
+                    <li>
+                        <a href="#">商标</a>
+                    </li>
+                    <li>
+                        <a href="#">© Microsoft 2021</a>
+                    </li>
+                </ul>
+            </footer>
+        </div>
+    </div>
+</body>
+<script src="/utils/vue.js"></script>
+<script src="/utils/jquery.js"></script>
+<script src="/utils/elementUI.js"></script>
+<script src="/js/file.js"></script>
+</html>

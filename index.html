@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>知识体系</title>
     <link rel="stylesheet" href="/css/head.css">
+    <link rel="stylesheet" href="/static/icon/iconfont.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
     <div id="app" class="wrapper">
@@ -16,21 +18,141 @@
 
                     </div>
                     <ul class="navBar">
-                        <li class="nav_bar_item">Docs</li>
-                        <li class="nav_bar_item">文档</li>
-                        <li class="nav_bar_item">Lera</li>
-                        <li class="nav_bar_item">Q&A</li>
-                        <li class="nav_bar_item">代码示例</li>
+                        <li class="nav_bar_item" v-for="(item,index) in headTabs" @click="changeTabs(item,index)">
+                            <a href="#">
+                                <span :class="{active:tabNumber==index}">
+                                    {{item.name}}
+                                </span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="nav_right">
-                    <input type="text">
-                    搜索
+                    <div class="search">
+                        <input class="inpSearch" type="text" placeholder="搜索" v-code>
+                        <i class="iconfont icon-sousuo"></i>
+                    </div>
+                    <a href="#" class="login_btn">登录</a>
                 </div>
             </div>
+        </div>
+        <div class="container">
+            <div class="directory">
+                <div class="uhf-container">
+                    <div class="columns">
+                        <div class="column">
+                            <p class="supertitle">
+                                欢迎查看 Microsoft 文档
+                            </p>
+                            <h1 class="title">技术文档</h1>
+                            <p class="font-size-l">搜索有关 Microsoft 开发人员工具和技术的深度文章。</p>
+                            <div class="control">
+                                <input class="inp" type="text" placeholder="搜索文档" v-focus>
+                                <button class="button">
+                                    <i class="iconfont icon-sousuo"></i>
+                                    搜索</button>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <img src="/images/air-traffic-controller-doc-2x.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="listings">
+                <p class="indexes">索引</p>
+                <h2 class="title">产品目录</h2>
+                <p class="font-size-l">按产品浏览我们的指南和文章。</p>
+                <div class="has-margin-top-extra-large">
+                    <ul class="has-three-text-columns">
+                        <li class="has-three-text-columns-list-items">
+                            <a class="bar-link" href="#">.NET</a>
+                        </li>
+                        <li class="has-three-text-columns-list-items" v-for="item in 30">
+                            <a class="bar-link" href="/productHome.html" target="_blank">
+                                适用于 Azure 的 GitHub Actions
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <section class="hero">
+                <div class="recommend_resources">
+                    <h2>推荐的资源</h2>
+                    <ul class="grid">
+                        <li class="grid_item">
+                            <div class="box">
+                                <div class="l_img">
+                                    <img src="/images/end-user-support-icon.svg" alt="">
+                                </div>
+                                <div class="media-content">
+                                    <a href="#" class="is-block">
+                                        <h3 class="font-size-h3">Microsoft 最终用户支持</h3>
+                                    </a>
+                                    <p class="desc">获取针对 Office、Windows 和 Surface 等应用的最终用户支持。 请访问我们的 Microsoft 支持网站来获取协助。</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="grid_item">
+                            <div class="box">
+                                <div class="l_img">
+                                    <img src="/images/end-user-community-icon.svg" alt="">
+                                </div>
+                                <div class="media-content">
+                                    <a href="#" class="is-block">
+                                        <h3 class="font-size-h3">
+                                            Microsoft 最终用户社区</h3>
+                                    </a>
+                                    <p class="desc">最终用户问题、疑惑、讨论和知识共享。 若要开始，请访问我们的 Microsoft 解答社区。</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <div class="footerLayout">
+            <footer>
+                <div class="is-full">
+                    <a href="#">
+                        <i class="iconfont icon-diqiu"></i>
+                        <span class="local-selector-link-text">中文 (简体)</span>
+                    </a>
+                    <div class="dropdown">
+                        <button>
+                            <i class="iconfont icon-diqiu"></i>
+                            <span>主题</span>
+                        </button>
+                    </div>
+                </div>
+                <ul class="links">
+                    <li>
+                        <a href="#">旧版文档</a>
+                    </li>
+                    <li>
+                        <a href="#">博客</a>
+                    </li>
+                    <li>
+                        <a href="#">参与</a>
+                    </li>
+                    <li>
+                        <a href="#">隐私和Cookie</a>
+                    </li>
+                    <li>
+                        <a href="#">使用条款</a>
+                    </li>
+                    <li>
+                        <a href="#">商标</a>
+                    </li>
+                    <li>
+                        <a href="#">© Microsoft 2021</a>
+                    </li>
+                </ul>
+            </footer>
         </div>
     </div>
 </body>
 <script src="/utils/vue.js"></script>
+<script src="/components/headLayout.js"></script>
 <script src="/js/index.js"></script>
 </html>

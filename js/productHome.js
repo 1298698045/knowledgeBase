@@ -27,16 +27,10 @@ const vm = new Vue({
             tabNumber:1
         }
     },
-    components:{
-        HeadLayout:headlayout
-    },
     methods: {
         changeTabs(item,index){
             this.tabNumber = index;
         }
-    },
-    created() {
-
     },
     directives: {
         'code': {
