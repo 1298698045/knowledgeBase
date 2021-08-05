@@ -70,7 +70,6 @@
     text-decoration: underline;
 }
 .container .column_wrap .center_container{
-    margin-left: 20px;
     display: flex;
     justify-content: space-between;
     flex: 1;
@@ -83,6 +82,7 @@
 }
 .container .column_wrap .center_container .main_bd{
     flex: 1;
+    padding: 24px;
 }
 .container .column_wrap .center_container .main_bd .recommendations-section {
     padding: 20px 0;
@@ -118,4 +118,27 @@
 }
 .container .column_wrap .center_container .right_cont{
     width: 200px;
+}
+.container .column_wrap .center_container .right_cont .feedback h3{
+    line-height: 1.3;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+.container .column_wrap .center_container .right_cont .feedback .side-doc-outline li{
+    margin: 4px 0;
+    padding-left: 4px;
+    border-left: 3px solid transparent;
+}
+.container .column_wrap .center_container .right_cont .feedback .side-doc-outline li.active{
+    text-shadow: .3px 0 0 currentColor;
+    border-left: 3px solid #0078d4;
+}
+.container .column_wrap .center_container .right_cont .feedback .side-doc-outline li a{
+    color: #0065b3;
+    font-size: 14px;
+    line-height: 1.3;
+}
+.container .column_wrap .center_container .right_cont .feedback .side-doc-outline li:hover a{
+    text-decoration: underline;
 }

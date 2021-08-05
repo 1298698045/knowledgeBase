@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="/static/icon/iconfont.css">
     <link rel="stylesheet" href="/css/file.css">
     <link rel="stylesheet" href="/css/elementUI.css">
+    <style>
+        .headLayout{
+            box-shadow: 0 0px 0px #fff!important;
+        }
+    </style>
 </head>
 <body>
     <div id="app" class="wrapper">
@@ -44,25 +49,19 @@
                         </span>
                     </a>
                     <nav class="nav_bar_nav">
-                        <ul class="lis">
-                            <li class="nav_bar_item dropdown">
-                                <span class="text">语言</span>
+                        <ul class="uls">
+                            <li class="nav_bar_item dropdown" v-for="(item,index) in list" @click="handleView(item,index)">
+                                <span class="text">{{item.name}}</span>
                                 <span class="icons">
                                     <i class="iconfont icon-shangjiantou"></i>
                                 </span>
-                                <div class="dropdown-menu">
-                                    <div class="nav-bar">
-                                        <a href="#">C#</a>
-                                    </div>
-                                    <div class="nav-bar">
-                                        <a href="#">C#</a>
-                                    </div>
-                                    <div class="nav-bar">
-                                        <a href="#">Visual Basic</a>
+                                <div class="dropdown-menu" v-if="item.isBook">
+                                    <div class="nav-bar" v-for="row in item.children">
+                                        <a href="#">{{row.name}}</a>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav_bar_item dropdown">
+                            <!-- <li class="nav_bar_item dropdown">
                                 <span class="text">工作负载</span>
                                 <span class="icons">
                                     <i class="iconfont icon-shangjiantou"></i>
@@ -79,7 +78,7 @@
                                 <span class="icons">
                                     <i class="iconfont icon-shangjiantou"></i>
                                 </span>
-                            </li>
+                            </li> -->
                         </ul>
                     </nav>
                     <p class="nav-bar-spacer"></p>
@@ -153,7 +152,23 @@
                         </section>
                     </div>
                     <div class="right_cont">
+                        <div class="feedback">
+                            <h3>此页面有帮助吗?</h3>
+                            <div class="flex">
 
+                            </div>
+                            <div class="side-doc-outline">
+                                <h3>本文内容</h3>
+                                <ol>
+                                    <li class="active">
+                                        <a href="#">创建应用程序</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="#">后续步骤</a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- <div class="right_container"></div> -->
