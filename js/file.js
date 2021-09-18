@@ -24,6 +24,7 @@ const vm = new Vue({
                     name:"代码示例"
                 }
             ],
+            subject:"",
             tabNumber:1,
             data: [{
                 label: '一级 1',
@@ -250,6 +251,9 @@ const vm = new Vue({
             }
           }
           this.list[index].isBook = !this.list[index].isBook;
+        },
+        handleCheck(item){
+          this.subject = item;
         }
     },
     created() {
@@ -270,10 +274,12 @@ const vm = new Vue({
         'focus':{
             inserted:function(val){
                 val.onfocus = function(){
-                    val.className = 'inp active'
+                    val.className = 'inp active';
+                    val.parentElement.lastElementChild.className = 'searchList active'
                 }
                 val.onblur = function(){
                     val.className = 'inp'
+                    val.parentElement.lastElementChild.className = 'searchList'
                 }
             }
         }

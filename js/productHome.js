@@ -24,13 +24,107 @@ const vm = new Vue({
                     name:"代码示例"
                 }
             ],
-            tabNumber:1
+            tabNumber:1,
+            list:[
+                {
+                  name:'语言',
+                  isBook:false,
+                  children:[
+                    {
+                      id:'',
+                      name:'C#'
+                    },
+                    {
+                      id:'',
+                      name:'C#'
+                    },
+                    {
+                      id:'',
+                      name:'Visual Basic'
+                    }
+                  ]
+                },
+                {
+                  name:'工作负载',
+                  isBook:false,
+                  children:[
+                    {
+                      id:'',
+                      name:'Web'
+                    },
+                    {
+                      id:'',
+                      name:'移动'
+                    },
+                    {
+                      id:'',
+                      name:'云'
+                    },
+                    {
+                      id:'',
+                      name:'桌面'
+                    }
+                  ]
+                },
+                {
+                  name:'API',
+                  isBook:false,
+                  children:[
+                    {
+                      id:'',
+                      name:'Web'
+                    },
+                    {
+                      id:'',
+                      name:'移动'
+                    },
+                    {
+                      id:'',
+                      name:'云'
+                    },
+                    {
+                      id:'',
+                      name:'桌面'
+                    }
+                  ]
+                },
+                {
+                  name:'资源',
+                  isBook:false,
+                  children:[
+                    {
+                      id:'',
+                      name:'Web'
+                    },
+                    {
+                      id:'',
+                      name:'移动'
+                    },
+                    {
+                      id:'',
+                      name:'云'
+                    },
+                    {
+                      id:'',
+                      name:'桌面'
+                    }
+                  ]
+                }
+              ]
         }
     },
     methods: {
         changeTabs(item,index){
             this.tabNumber = index;
-        }
+        },
+        handleView(item,index){
+            for(let i=0; i<this.list.length;i++){
+              if(i!=index){
+                this.list[i].isBook = false;
+              }
+            }
+            this.list[index].isBook = !this.list[index].isBook;
+          },
     },
     directives: {
         'code': {

@@ -111,8 +111,14 @@
                         <form action="javascript:">
                             <div class="autocomplete">
                                 <div class="control">
-                                    <input class="inp" type="text" placeholder="按标题筛选" v-focus>
+                                    <input class="inp" v-model="subject" type="text" placeholder="按标题筛选" v-focus>
                                     <i class="iconfont icon-shaixuan"></i>
+                                    <ul class="searchList" v-focus>
+                                        <li class="item" v-for="item in 8" @mousedown="handleCheck(item)">
+                                            <p class="title">.net</p>
+                                            <p class="text">学习</p>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </form>

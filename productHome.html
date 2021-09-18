@@ -35,6 +35,34 @@
                     <a href="#" class="login_btn">登录</a>
                 </div>
             </div>
+            <div class="nav_bar">
+                <div class="nav_bar_margin">
+                    <a href="#" class="nav-bar-button">
+                        <span>
+                            .NET
+                        </span>
+                    </a>
+                    <nav class="nav_bar_nav">
+                        <ul class="uls">
+                            <li class="nav_bar_item dropdown" v-for="(item,index) in list" @click="handleView(item,index)">
+                                <span class="text">{{item.name}}</span>
+                                <span class="icons">
+                                    <i class="iconfont icon-shangjiantou"></i>
+                                </span>
+                                <div class="dropdown-menu" v-if="item.isBook">
+                                    <div class="nav-bar" v-for="row in item.children">
+                                        <a href="#">{{row.name}}</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p class="nav-bar-spacer"></p>
+                    <div class="nav-bar-list">
+                        <a class="download" href="#">下载 .NET</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="container">
             <section class="heroCard">

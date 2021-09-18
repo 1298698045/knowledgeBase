@@ -52,6 +52,30 @@
     left: 5px;
     color: #0078d4;
 }
+.container .column_wrap .postion_fixed .autocomplete .control .searchList{
+    width: 360px;
+    max-width: 500px;
+    max-height: 288px;
+    position: absolute;
+    top: 100%;
+    background: #fff;
+    z-index: 999;
+    margin: 2px 0 0!important;
+    box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,.13);
+    overflow-y: auto;
+    display: none;
+}
+.container .column_wrap .postion_fixed .autocomplete .control .searchList.active{
+    display: block;
+}
+.container .column_wrap .postion_fixed .autocomplete .control .searchList .item{
+    padding: 5px 16px;
+    bottom: 2px solid transparent;
+}
+.container .column_wrap .postion_fixed .autocomplete .control .searchList .item:hover{
+    background: #ccc;
+    border: 2px dashed #171717;
+}
 .container .column_wrap .postion_fixed .tree{
     margin-top: 20px;
     max-height: 500px;
